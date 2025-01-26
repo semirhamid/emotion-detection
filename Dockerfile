@@ -21,6 +21,7 @@ COPY . .
 # Download the model during build
 RUN python download_model.py
 
-EXPOSE 8080
-RUN chmod +x ./entrypoint.sh
-ENTRYPOINT ["sh", "entrypoint.sh"]
+EXPOSE 8000
+
+# Command to run the application using uvicorn with api.py
+CMD ["uvicorn", "main:app", "--port", "8000"] 
