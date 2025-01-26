@@ -25,4 +25,4 @@ RUN python download_model.py
 EXPOSE 80
 
 # Command to run the application using uvicorn with api.py
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "80"] 
+CMD ["uvicorn", "api:app"] 
