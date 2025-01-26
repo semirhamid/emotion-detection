@@ -22,7 +22,7 @@ COPY . .
 RUN python download_model.py
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 5050
 
 # Command to run the application using uvicorn with api.py
-CMD ["uvicorn", "api:app"] 
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "5050"] 
