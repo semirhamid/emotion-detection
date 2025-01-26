@@ -11,11 +11,7 @@ def setup_classifier():
     # Force CPU
     device = -1  # Always use CPU
     
-    classifier = pipeline(
-        "text-classification",
-        model=MODEL_PATH,
-        device=device,
-    )
+    classifier = pipeline("text-classification", model="./model", tokenizer="./model")
     return classifier
 
 def predict(texts, classifier=None):
